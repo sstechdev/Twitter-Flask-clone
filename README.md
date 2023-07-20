@@ -1,5 +1,5 @@
 # 
-# Aplicación de redes sociales Flask
+# PetApp
 
 red social creada con Flask. Los usuarios pueden publicar comentarios, cargar imágenes, dar me gusta a las publicaciones y comentar las publicaciones.
 
