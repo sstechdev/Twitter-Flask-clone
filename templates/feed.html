@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1 className="p-5 m-4 color-black">PetApp</h1>
+        <h2>Bienvenido, {{ session['username'] }}</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="comentario">Que estas pensando?</label><br>
+            <textarea id="comentario" name="comentario"></textarea><br>
+            <label for="file">Archivo:</label><br>
+            <input type="file" id="file" name="file"><br>
+            <input type="submit" value="Publicar">
+        </form>
+        <h2>Que estas pensando?</h2>
+        {% for post in comentarios %}
+            {% if loop.first %}
+                <h3>Primer Post</h3>
+            {% endif %}
+            <p>{{ post['username'] }}: {{ post['comentario'] }}</p>
+            {% if post['filename'] %}
+                <img src="{{ url_for('static', filename='uploads/' + post['filename']) }}" alt="Image">
+            {% endif %}
+            <div class="like-container">
+                <form method="POST" action="{{ url_for('like', post_id=loop.index0) }}">
+                    <button type="submit">&#x2764; Like</button>
+                </form>
+                <p> <img src=""></img> ❤️ {{ post['likes'] }}</p>
+            </div>
+            {% for comment in post['comments'] %}
+                <p>{{ comment[0] }}: {{ comment[1] }}</p>
+            {% endfor %}
+            <form method="POST" action="{{ url_for('comment', post_id=loop.index0) }}">
+                <label for="comment">Commenta:</label><br>
+                <input type="text" id="comment" name="comment" required><br>
+                <input type="submit" value="Comment">
+            </form>
+            {% if loop.first %}
+                <hr>
+            {% endif %}
+        {% endfor %}
+        <button onclick="topFunction()" id="myBtn" class="top-button">Top</button>
+    </div>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+</body>
+</html>

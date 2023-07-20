@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form method="POST">
+        <h1>Iniciar Session</h1>
+        <label for="username">Usuario:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Contraseña:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Iniciar sesión">
+    </form>
+</body>
+</html>
