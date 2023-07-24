@@ -3,36 +3,39 @@
 
 Red social para mascotas creada con Flask. Los usuarios pueden publicar comentarios, cargar imágenes, dar me gusta a las publicaciones y comentar las publicaciones.
 
+## Captura
+![Alt text](static/uploads/CapturaPawPal.jpeg)
+
 ## Instalación
 
 Antes de comenzar, asegúrese de tener Python y pip instalados en su sistema. Si no los tiene instalados, puede descargar Python [aquí] (https://www.python.org/downloads/) y pip se instalará con Python.
 
 Clone este repositorio en su máquina local:
 
-     ```
+     
      git clone https://github.com/sstechdev/PetApp
-     ```
+     
 
 Navegue al directorio del proyecto:
 
-     ```
+     
      cd PetApp
-     ```
+     
 
 Instale los paquetes necesarios:
 
-     ```
+     
      pip install flask
-     ```
+     
 
 
 ## Ejecutar la aplicación
 
 Ejecute la aplicación Flask:
 
-     ```
+     
      flask run
-     ```
+     
 
 3. Abra su navegador web y vaya a `http://127.0.0.1:5000/`.
 
