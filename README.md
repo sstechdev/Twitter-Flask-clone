@@ -1,7 +1,7 @@
 # 
-# PawPals
+# Twitter Flask Clone
 
-Red social para mascotas creada con Flask. Los usuarios pueden publicar comentarios, cargar imágenes, dar me gusta a las publicaciones y comentar las publicaciones.
+Red social creada con Flask. Los usuarios pueden publicar comentarios, cargar imágenes, dar me gusta a las publicaciones y comentar las publicaciones.
 
 ## Captura
 ![Alt text](static/uploads/CapturaPawPal.jpeg)
